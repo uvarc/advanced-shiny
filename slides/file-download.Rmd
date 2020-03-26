@@ -1,0 +1,22 @@
+## The `downloadButton` widget
+
+* Opens file browser to choose filename and write directory
+* Connects to `downloadHandler()` in our server function
+
+## `downloadHandler()`
+
+* 2 arguments: `filename` and `content`
+* `filename` can be a name or a function containing paste, etc for generating a name
+* `content` is a function containing commands for writing the file
+
+## Dynamic Reports
+
+We can use RMarkdown to generate reports from the results in our Shiny app.
+
+What we need:
+
+* A template .Rmd file
+* A `downloadHandler()` with a `content` function containing:
+    * `params`: a list of input values we want to use in our .Rmd file
+    * `rmarkdown::render()` to render our report
+    * some stuff with `tempdir` (this is to prevent issues with write permissions, which users might not have on the deployment server)

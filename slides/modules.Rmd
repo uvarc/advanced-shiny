@@ -1,0 +1,52 @@
+```{r include=FALSE}
+library(shiny)
+```
+
+## What are modules?
+
+Modules are just functions that allow us to reuse components of our Shiny UI and server.
+
+Like functions, they allow us to reproduce the same functionality multiple times and share that functionality with others
+
+## Project 5
+
+Open app.R, UI-counter.R, and server-components.R
+
+The UI and server components are simple enough to replicate for multiple vehicle types, but tedious
+
+The main issue is coding the unique IDs and calls to those IDs
+
+## 2 main functions
+
+NS() and callModule()
+
+NS() allows us to create unique IDs for our UI components (stored in a function ns())
+
+callModule() allows us to connect reactive elements to the unique IDs provided by ns()
+
+## Module functions
+
+We will create 2 module functions, one for the UI and one for server components
+
+Module functions come in pairs and follow the naming convention mymod_UI() and mymod()
+
+In this case we will be putting these functions in muggle.R
+
+Name them vehicle_counter_UI and vehicle_counter. vehicle_counter_UI will hold our UI stuff, and vehicle_counter the reactive
+
+## Expanding Functionality for Multiple Vehicle Types
+
+### Some transportation icons:
+
+Vehicle    | icon name        | icon
+----------:|:-----------------|:-----
+automobile | `"car"`          | `r icon("car")`
+bike       | `"bicycle"   `   | `r icon("bicycle")`
+truck      | `"truck"`        | `r icon("truck")`
+bus        | `"bus"`          | `r icon("bus")`
+motorcycle | `"motorcycle"`   | `r icon("motorcycle")`
+helicopter | `"helicopter"`   | `r icon("helicopter")`
+airplane   | `"plane"`        | `r icon("plane")`
+wheelchair | `"wheelchair"`   | `r icon("wheelchair")`
+Mary Poppins | `"umbrella"`   | `r icon("umbrella")`
+

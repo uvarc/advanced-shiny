@@ -1,0 +1,32 @@
+## Shiny App Components
+
+* UI: what our app looks like
+    * contains our input and output widgets
+    * users can change values in this section
+
+<br>
+
+* Server: what our app does
+    * contains reactive logic
+    * connects the reactive logic to our input and output widgets
+    
+## Reactivity
+
+* 2 states of reactives
+    1. Their value (numerical, text, plot)
+    2. Their validity (valid or invalid)
+
+<br>
+
+* 3 types of reactives
+    1. Inputs (outward connections)
+    2. Observers (inward connections)
+    3. Conductors (inward and outward connections)
+    
+## Reactives vs. Observers
+
+**Reactives**: calculate or cache a value, meant to be used as a variable, has a result
+
+**Observers**: for side effects--runs some code when a dependency changes, doesn't yield a result, isn't used as input for other expressions, not assigned to a variable (e.g., updating a menu based on a selection)
+
+## Project 3

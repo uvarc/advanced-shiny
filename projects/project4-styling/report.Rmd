@@ -1,0 +1,41 @@
+---
+title: "Dynamic Report"
+output: html_document
+params:
+ input_file: NA
+ header: NA
+ sep: NA
+ response_var: NA
+ explanatory_var: NA
+---
+
+## Data
+
+
+```{r}
+
+df <- read.delim(params$input_file, header = params$header, sep = params$sep)
+
+df <- df[c(params$response_var,params$explanatory_var)]
+
+head(df)
+
+```
+
+## Plot
+
+```{r}
+ggplot(df, aes_string(x = params$explanatory_var, y=params$response_var)) + geom_point()
+```
+
+## Regression Model
+
+```{r}
+
+formula <- paste(params$response_var, "~", params$explanatory_var)
+
+fitted_model <- lm(formula, df)
+
+summary(fitted_model)
+
+```

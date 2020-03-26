@@ -1,0 +1,13 @@
+name: project4-styling
+title: project4-styling
+username:
+account: cagancayco
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 1999577
+bundleId: 2927336
+url: https://cagancayco.shinyapps.io/project4-styling/
+when: 1585228930.71919
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: www/.DS_Store

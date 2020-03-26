@@ -1,0 +1,38 @@
+---
+output:
+  revealjs::revealjs_presentation:
+    self_contained: false
+    reveal_plugins: ["notes", "search", "chalkboard", "menu"]
+    
+---
+
+```{r child="page-definitions.Rmd"}
+```
+  
+# {data-background-image="./images/title-slide.jpg"}
+
+
+# Review from Last Week
+
+```{r child="review.Rmd"}
+```
+
+# File Upload
+
+```{r child="file-upload.Rmd"}
+```
+
+# File Download
+
+```{r child="file-download.Rmd"}
+```
+
+# Styling Your App
+
+```{r child="styling.Rmd"}
+```
+
+# Modules
+
+```{r child="modules.Rmd"}
+```

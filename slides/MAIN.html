@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>MAIN.utf8</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="MAIN_files/reveal.js-3.3.0.1/css/reveal.css"/>
+
+
+
+<link rel="stylesheet" href="MAIN_files/reveal.js-3.3.0.1/css/theme/simple.css" id="theme">
+
+
+  <!-- some tweaks to reveal css -->
+  <style type="text/css">
+    .reveal h1 { font-size: 2.0em; }
+    .reveal h2 { font-size: 1.5em;  }
+    .reveal h3 { font-size: 1.25em;	}
+    .reveal h4 { font-size: 1em;	}
+
+    .reveal .slides>section,
+    .reveal .slides>section>section {
+      padding: 0px 0px;
+    }
+
+
+
+    .reveal table {
+      border-width: 1px;
+      border-spacing: 2px;
+      border-style: dotted;
+      border-color: gray;
+      border-collapse: collapse;
+      font-size: 0.7em;
+    }
+
+    .reveal table th {
+      border-width: 1px;
+      padding-left: 10px;
+      padding-right: 25px;
+      font-weight: bold;
+      border-style: dotted;
+      border-color: gray;
+    }
+
+    .reveal table td {
+      border-width: 1px;
+      padding-left: 10px;
+      padding-right: 25px;
+      border-style: dotted;
+      border-color: gray;
+    }
+
+    .reveal .slide-menu-button {
+      left: 105px !important;
+    }
+
+  </style>
+
+    <style type="text/css">code{white-space: pre;}</style>
+
+
+<!-- Printing and PDF exports -->
+<script id="paper-css" type="application/dynamic-css">
+
+/* Default Print Stylesheet Template
+   by Rob Glazebrook of CSSnewbie.com
+   Last Updated: June 4, 2008
+
+   Feel free (nay, compelled) to edit, append, and
+   manipulate this file as you see fit. */
+
+
+@media print {
+
+	/* SECTION 1: Set default width, margin, float, and
+	   background. This prevents elements from extending
+	   beyond the edge of the printed page, and prevents
+	   unnecessary background images from printing */
+	html {
+		background: #fff;
+		width: auto;
+		height: auto;
+		overflow: visible;
+	}
+	body {
+		background: #fff;
+		font-size: 20pt;
+		width: auto;
+		height: auto;
+		border: 0;
+		margin: 0 5%;
+		padding: 0;
+		overflow: visible;
+		float: none !important;
+	}
+
+	/* SECTION 2: Remove any elements not needed in print.
+	   This would include navigation, ads, sidebars, etc. */
+	.nestedarrow,
+	.controls,
+	.fork-reveal,
+	.share-reveal,
+	.state-background,
+	.reveal .progress,
+	.reveal .backgrounds {
+		display: none !important;
+	}
+
+	/* SECTION 3: Set body font face, size, and color.
+	   Consider using a serif font for readability. */
+	body, p, td, li, div {
+		font-size: 20pt!important;
+		font-family: Georgia, "Times New Roman", Times, serif !important;
+		color: #000;
+	}
+
+	/* SECTION 4: Set heading font face, sizes, and color.
+	   Differentiate your headings from your body text.
+	   Perhaps use a large sans-serif for distinction. */
+	h1,h2,h3,h4,h5,h6 {
+		color: #000!important;
+		height: auto;
+		line-height: normal;
+		font-family: Georgia, "Times New Roman", Times, serif !important;
+		text-shadow: 0 0 0 #000 !important;
+		text-align: left;
+		letter-spacing: normal;
+	}
+	/* Need to reduce the size of the fonts for printing */
+	h1 { font-size: 28pt !important;  }
+	h2 { font-size: 24pt !important; }
+	h3 { font-size: 22pt !important; }
+	h4 { font-size: 22pt !important; font-variant: small-caps; }
+	h5 { font-size: 21pt !important; }
+	h6 { font-size: 20pt !important; font-style: italic; }
+
+	/* SECTION 5: Make hyperlinks more usable.
+	   Ensure links are underlined, and consider appending
+	   the URL to the end of the link for usability. */
+	a:link,
+	a:visited {
+		color: #000 !important;
+		font-weight: bold;
+		text-decoration: underline;
+	}
+	/*
+	.reveal a:link:after,
+	.reveal a:visited:after {
+		content: " (" attr(href) ") ";
+		color: #222 !important;
+		font-size: 90%;
+	}
+	*/
+
+
+	/* SECTION 6: more reveal.js specific additions by @skypanther */
+	ul, ol, div, p {
+		visibility: visible;
+		position: static;
+		width: auto;
+		height: auto;
+		display: block;
+		overflow: visible;
+		margin: 0;
+		text-align: left !important;
+	}
+	.reveal pre,
+	.reveal table {
+		margin-left: 0;
+		margin-right: 0;
+	}
+	.reveal pre code {
+		padding: 20px;
+		border: 1px solid #ddd;
+	}
+	.reveal blockquote {
+		margin: 20px 0;
+	}
+	.reveal .slides {
+		position: static !important;
+		width: auto !important;
+		height: auto !important;
+
+		left: 0 !important;
+		top: 0 !important;
+		margin-left: 0 !important;
+		margin-top: 0 !important;
+		padding: 0 !important;
+		zoom: 1 !important;
+
+		overflow: visible !important;
+		display: block !important;
+
+		text-align: left !important;
+		-webkit-perspective: none;
+		   -moz-perspective: none;
+		    -ms-perspective: none;
+		        perspective: none;
+
+		-webkit-perspective-origin: 50% 50%;
+		   -moz-perspective-origin: 50% 50%;
+		    -ms-perspective-origin: 50% 50%;
+		        perspective-origin: 50% 50%;
+	}
+	.reveal .slides section {
+		visibility: visible !important;
+		position: static !important;
+		width: auto !important;
+		height: auto !important;
+		display: block !important;
+		overflow: visible !important;
+
+		left: 0 !important;
+		top: 0 !important;
+		margin-left: 0 !important;
+		margin-top: 0 !important;
+		padding: 60px 20px !important;
+		z-index: auto !important;
+
+		opacity: 1 !important;
+
+		page-break-after: always !important;
+
+		-webkit-transform-style: flat !important;
+		   -moz-transform-style: flat !important;
+		    -ms-transform-style: flat !important;
+		        transform-style: flat !important;
+
+		-webkit-transform: none !important;
+		   -moz-transform: none !important;
+		    -ms-transform: none !important;
+		        transform: none !important;
+
+		-webkit-transition: none !important;
+		   -moz-transition: none !important;
+		    -ms-transition: none !important;
+		        transition: none !important;
+	}
+	.reveal .slides section.stack {
+		padding: 0 !important;
+	}
+	.reveal section:last-of-type {
+		page-break-after: avoid !important;
+	}
+	.reveal section .fragment {
+		opacity: 1 !important;
+		visibility: visible !important;
+
+		-webkit-transform: none !important;
+		   -moz-transform: none !important;
+		    -ms-transform: none !important;
+		        transform: none !important;
+	}
+	.reveal section img {
+		display: block;
+		margin: 15px 0px;
+		background: rgba(255,255,255,1);
+		border: 1px solid #666;
+		box-shadow: none;
+	}
+
+	.reveal section small {
+		font-size: 0.8em;
+	}
+
+}  
+</script>
+
+
+<script id="pdf-css" type="application/dynamic-css">
+    
+/**
+ * This stylesheet is used to print reveal.js
+ * presentations to PDF.
+ *
+ * https://github.com/hakimel/reveal.js#pdf-export
+ */
+
+* {
+	-webkit-print-color-adjust: exact;
+}
+
+body {
+	margin: 0 auto !important;
+	border: 0;
+	padding: 0;
+	float: none !important;
+	overflow: visible;
+}
+
+html {
+	width: 100%;
+	height: 100%;
+	overflow: visible;
+}
+
+/* Remove any elements not needed in print. */
+.nestedarrow,
+.reveal .controls,
+.reveal .progress,
+.reveal .playback,
+.reveal.overview,
+.fork-reveal,
+.share-reveal,
+.state-background {
+	display: none !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	text-shadow: 0 0 0 #000 !important;
+}
+
+.reveal pre code {
+	overflow: hidden !important;
+	font-family: Courier, 'Courier New', monospace !important;
+}
+
+ul, ol, div, p {
+	visibility: visible;
+	position: static;
+	width: auto;
+	height: auto;
+	display: block;
+	overflow: visible;
+	margin: auto;
+}
+.reveal {
+	width: auto !important;
+	height: auto !important;
+	overflow: hidden !important;
+}
+.reveal .slides {
+	position: static;
+	width: 100%;
+	height: auto;
+
+	left: auto;
+	top: auto;
+	margin: 0 !important;
+	padding: 0 !important;
+
+	overflow: visible;
+	display: block;
+
+	-webkit-perspective: none;
+	   -moz-perspective: none;
+	    -ms-perspective: none;
+	        perspective: none;
+
+	-webkit-perspective-origin: 50% 50%; /* there isn't a none/auto value but 50-50 is the default */
+	   -moz-perspective-origin: 50% 50%;
+	    -ms-perspective-origin: 50% 50%;
+	        perspective-origin: 50% 50%;
+}
+
+.reveal .slides section {
+	page-break-after: always !important;
+
+	visibility: visible !important;
+	position: relative !important;
+	display: block !important;
+	position: relative !important;
+
+	margin: 0 !important;
+	padding: 0 !important;
+	box-sizing: border-box !important;
+	min-height: 1px;
+
+	opacity: 1 !important;
+
+	-webkit-transform-style: flat !important;
+	   -moz-transform-style: flat !important;
+	    -ms-transform-style: flat !important;
+	        transform-style: flat !important;
+
+	-webkit-transform: none !important;
+	   -moz-transform: none !important;
+	    -ms-transform: none !important;
+	        transform: none !important;
+}
+
+.reveal section.stack {
+	margin: 0 !important;
+	padding: 0 !important;
+	page-break-after: avoid !important;
+	height: auto !important;
+	min-height: auto !important;
+}
+
+.reveal img {
+	box-shadow: none;
+}
+
+.reveal .roll {
+	overflow: visible;
+	line-height: 1em;
+}
+
+/* Slide backgrounds are placed inside of their slide when exporting to PDF */
+.reveal section .slide-background {
+	display: block !important;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: -1;
+}
+
+/* All elements should be above the slide-background */
+.reveal section>* {
+	position: relative;
+	z-index: 1;
+}
+
+/* Display slide speaker notes when 'showNotes' is enabled */
+.reveal .speaker-notes-pdf {
+	display: block;
+	width: 100%;
+	max-height: none;
+	left: auto;
+	top: auto;
+	z-index: 100;
+}
+
+/* Display slide numbers when 'slideNumber' is enabled */
+.reveal .slide-number-pdf {
+	display: block;
+	position: absolute;
+	font-size: 14px;
+}
+
+</script>
+
+
+<script>
+var style = document.createElement( 'style' );
+style.type = 'text/css';
+var style_script_id = window.location.search.match( /print-pdf/gi ) ? 'pdf-css' : 'paper-css';
+var style_script = document.getElementById(style_script_id).text;
+style.innerHTML = style_script;
+document.getElementsByTagName('head')[0].appendChild(style);
+</script>
+
+    <link href="MAIN_files/font-awesome-5.3.1/css/all.min.css" rel="stylesheet" />
+    <link href="MAIN_files/font-awesome-5.3.1/css/v4-shims.min.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+
+<section class="slide level2">
+
+<style>
+.container{
+    display: flex;
+}
+.colsmall {
+    flex: 0.5;
+}
+.col{
+    flex: 1;
+}
+.col2{
+    flex: 2;
+}
+.col3{
+    flex: 3;
+}
+.col4{
+    flex: 4;
+}
+</style>
+<style type="text/css">
+  .reveal p {
+    text-align: left;
+  }
+  .reveal ul {
+    display: block;
+  }
+  .reveal ol {
+    display: block;
+  }
+</style>
+</section>
+<section id="section" class="title-slide slide level1" data-background-image="./images/title-slide.jpg"><h1></h1></section>
+<section><section id="review-from-last-week" class="title-slide slide level1"><h1>Review from Last Week</h1></section><section id="shiny-app-components" class="slide level2">
+<h2>Shiny App Components</h2>
+<ul>
+<li>UI: what our app looks like
+<ul>
+<li>contains our input and output widgets</li>
+<li>users can change values in this section</li>
+</ul></li>
+</ul>
+<p><br></p>
+<ul>
+<li>Server: what our app does
+<ul>
+<li>contains reactive logic</li>
+<li>connects the reactive logic to our input and output widgets</li>
+</ul></li>
+</ul>
+</section><section id="reactivity" class="slide level2">
+<h2>Reactivity</h2>
+<ul>
+<li>2 states of reactives
+<ol type="1">
+<li>Their value (numerical, text, plot)</li>
+<li>Their validity (valid or invalid)</li>
+</ol></li>
+</ul>
+<p><br></p>
+<ul>
+<li>3 types of reactives
+<ol type="1">
+<li>Inputs (outward connections)</li>
+<li>Observers (inward connections)</li>
+<li>Conductors (inward and outward connections)</li>
+</ol></li>
+</ul>
+</section><section id="reactives-vs.observers" class="slide level2">
+<h2>Reactives vs. Observers</h2>
+<p><strong>Reactives</strong>: calculate or cache a value, meant to be used as a variable, has a result</p>
+<p><strong>Observers</strong>: for side effects–runs some code when a dependency changes, doesn’t yield a result, isn’t used as input for other expressions, not assigned to a variable (e.g., updating a menu based on a selection)</p>
+</section><section id="project-3" class="slide level2">
+<h2>Project 3</h2>
+</section></section>
+<section><section id="file-upload" class="title-slide slide level1"><h1>File Upload</h1></section><section id="the-fileinput-widget" class="slide level2">
+<h2>The <code>fileInput</code> widget</h2>
+<ul>
+<li>Allows user to browse for a file</li>
+<li>You can limit which file types are accepted (MIME/media types)</li>
+<li>Returns <code>datapath</code>, which can be used in <code>read.csv</code></li>
+</ul>
+</section><section id="in-server" class="slide level2">
+<h2>In server:</h2>
+<ul>
+<li>Replace the <code>switch</code> with <code>read.csv</code></li>
+<li>Replace references to <code>frame</code> with <code>file1</code></li>
+</ul>
+</section><section id="different-file-types" class="slide level2">
+<h2>Different file types</h2>
+<ul>
+<li>Add to <code>accept</code></li>
+<li>Add input widgets so user can choose header and delimiter type</li>
+<li>Switch <code>read.csv</code> to <code>read.delim</code></li>
+</ul>
+</section></section>
+<section><section id="file-download" class="title-slide slide level1"><h1>File Download</h1></section><section id="the-downloadbutton-widget" class="slide level2">
+<h2>The <code>downloadButton</code> widget</h2>
+<ul>
+<li>Opens file browser to choose filename and write directory</li>
+<li>Connects to <code>downloadHandler()</code> in our server function</li>
+</ul>
+</section><section id="downloadhandler" class="slide level2">
+<h2><code>downloadHandler()</code></h2>
+<ul>
+<li>2 arguments: <code>filename</code> and <code>content</code></li>
+<li><code>filename</code> can be a name or a function containing paste, etc for generating a name</li>
+<li><code>content</code> is a function containing commands for writing the file</li>
+</ul>
+</section><section id="dynamic-reports" class="slide level2">
+<h2>Dynamic Reports</h2>
+<p>We can use RMarkdown to generate reports from the results in our Shiny app.</p>
+<p>What we need:</p>
+<ul>
+<li>A template .Rmd file</li>
+<li>A <code>downloadHandler()</code> with a <code>content</code> function containing:
+<ul>
+<li><code>params</code>: a list of input values we want to use in our .Rmd file</li>
+<li><code>rmarkdown::render()</code> to render our report</li>
+<li>some stuff with <code>tempdir</code> (this is to prevent issues with write permissions, which users might not have on the deployment server)</li>
+</ul></li>
+</ul>
+</section></section>
+<section><section id="styling-your-app" class="title-slide slide level1"><h1>Styling Your App</h1></section><section id="bootswatch" class="slide level2">
+<h2>Bootswatch</h2>
+<p>Bootswatch hosts a bunch of Bootstrap themes that we can use to change how our app looks</p>
+<p>Shiny is not completely compatible with Bootstrap 4 yet, so we need to use Bootstrap 3 themes.</p>
+<p><a href="https://bootswatch.com/3/" class="uri">https://bootswatch.com/3/</a></p>
+</section><section id="using-a-new-theme" class="slide level2">
+<h2>Using a new theme</h2>
+<ol type="1">
+<li><p>Create a www folder in your app directory</p>
+<ul>
+<li>put any extra files your app references in www (e.g. CSS, images)</li>
+</ul></li>
+<li><p>Choose a theme and download the .css file to www.</p>
+<ul>
+<li>I prefer the .css over .min.css – more readable</li>
+</ul></li>
+<li><p>Add <code>tags$head</code> and <code>tags$link</code> to your UI</p></li>
+</ol>
+<p><img data-src="images/css.png" /></p>
+</section><section id="editing-the-css-file" class="slide level2">
+<h2>Editing the CSS file</h2>
+<p>Replace HEX colors</p>
+<p>Directly editing the source CSS works, but is tedious and error-prone</p>
+</section><section id="bootstraplib" class="slide level2">
+<h2>Bootstraplib</h2>
+<p>A package for styling apps directly from R</p>
+<p>Not yet in CRAN</p>
+<p><a href="https://rstudio.github.io/bootstraplib/index.html" class="uri">https://rstudio.github.io/bootstraplib/index.html</a></p>
+</section><section id="deploying-your-app" class="slide level2">
+<h2>Deploying your App</h2>
+<ol type="1">
+<li><p>Put all the files your app needs in a single directory (the name of the directory will be the name of the app)</p></li>
+<li><p>Make sure there is a file called <code>app.R</code> with the call to <code>shinyApp()</code></p></li>
+<li><p><code>rsconnect::deployApp(&quot;/path/to/app/directory&quot;)</code></p></li>
+</ol>
+<p>or</p>
+<ol start="3" type="1">
+<li>The Publish button</li>
+</ol>
+</section></section>
+<section><section id="modules" class="title-slide slide level1"><h1>Modules</h1></section><section id="what-are-modules" class="slide level2">
+<h2>What are modules?</h2>
+<p>Modules are just functions that allow us to reuse components of our Shiny UI and server.</p>
+<p>Like functions, they allow us to reproduce the same functionality multiple times and share that functionality with others</p>
+</section><section id="project-5" class="slide level2">
+<h2>Project 5</h2>
+<p>Open app.R, UI-counter.R, and server-components.R</p>
+<p>The UI and server components are simple enough to replicate for multiple vehicle types, but tedious</p>
+<p>The main issue is coding the unique IDs and calls to those IDs</p>
+</section><section id="main-functions" class="slide level2">
+<h2>2 main functions</h2>
+<p>NS() and callModule()</p>
+<p>NS() allows us to create unique IDs for our UI components (stored in a function ns())</p>
+<p>callModule() allows us to connect reactive elements to the unique IDs provided by ns()</p>
+</section><section id="module-functions" class="slide level2">
+<h2>Module functions</h2>
+<p>We will create 2 module functions, one for the UI and one for server components</p>
+<p>Module functions come in pairs and follow the naming convention mymod_UI() and mymod()</p>
+<p>In this case we will be putting these functions in muggle.R</p>
+<p>Name them vehicle_counter_UI and vehicle_counter. vehicle_counter_UI will hold our UI stuff, and vehicle_counter the reactive</p>
+</section><section id="expanding-functionality-for-multiple-vehicle-types" class="slide level2">
+<h2>Expanding Functionality for Multiple Vehicle Types</h2>
+<h3 id="some-transportation-icons">Some transportation icons:</h3>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: right;">Vehicle</th>
+<th style="text-align: left;">icon name</th>
+<th style="text-align: left;">icon</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">automobile</td>
+<td style="text-align: left;"><code>&quot;car&quot;</code></td>
+<td style="text-align: left;"><i class="fa fa-car"></i></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">bike</td>
+<td style="text-align: left;"><code>&quot;bicycle&quot;</code></td>
+<td style="text-align: left;"><i class="fa fa-bicycle"></i></td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">truck</td>
+<td style="text-align: left;"><code>&quot;truck&quot;</code></td>
+<td style="text-align: left;"><i class="fa fa-truck"></i></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">bus</td>
+<td style="text-align: left;"><code>&quot;bus&quot;</code></td>
+<td style="text-align: left;"><i class="fa fa-bus"></i></td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">motorcycle</td>
+<td style="text-align: left;"><code>&quot;motorcycle&quot;</code></td>
+<td style="text-align: left;"><i class="fa fa-motorcycle"></i></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">helicopter</td>
+<td style="text-align: left;"><code>&quot;helicopter&quot;</code></td>
+<td style="text-align: left;"><i class="fa fa-helicopter"></i></td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">airplane</td>
+<td style="text-align: left;"><code>&quot;plane&quot;</code></td>
+<td style="text-align: left;"><i class="fa fa-plane"></i></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">wheelchair</td>
+<td style="text-align: left;"><code>&quot;wheelchair&quot;</code></td>
+<td style="text-align: left;"><i class="fa fa-wheelchair"></i></td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">Mary Poppins</td>
+<td style="text-align: left;"><code>&quot;umbrella&quot;</code></td>
+<td style="text-align: left;"><i class="fa fa-umbrella"></i></td>
+</tr>
+</tbody>
+</table>
+</section></section>
+    </div>
+  </div>
+
+  <script src="MAIN_files/reveal.js-3.3.0.1/lib/js/head.min.js"></script>
+  <script src="MAIN_files/reveal.js-3.3.0.1/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+        // Vertical centering of slides
+        center: false,
+        // Transition style
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        // Transition style for full page slide backgrounds
+        backgroundTransition: 'default', // none/fade/slide/convex/concave/zoom
+
+        menu: {
+          custom: false,
+          themes: false,
+          transitions: false
+        },
+
+
+
+        chalkboard: {
+        },
+
+        keyboard: {
+          67: function() { RevealChalkboard.toggleNotesCanvas() },    // toggle notes canvas when 'c' is pressed
+          66: function() { RevealChalkboard.toggleChalkboard() }, // toggle chalkboard when 'b' is pressed
+          46: function() { RevealChalkboard.clear() },    // clear chalkboard when 'DEL' is pressed
+           8: function() { RevealChalkboard.reset() },    // reset chalkboard data on current slide when 'BACKSPACE' is pressed
+          68: function() { RevealChalkboard.download() }, // downlad recorded chalkboard drawing when 'd' is pressed
+        },
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'MAIN_files/reveal.js-3.3.0.1/plugin/notes/notes.js', async: true },
+          { src: 'MAIN_files/reveal.js-3.3.0.1/plugin/search/search.js', async: true },
+          { src: 'MAIN_files/reveal.js-3.3.0.1/plugin/chalkboard/chalkboard.js', async: true },
+          { src: 'MAIN_files/reveal.js-3.3.0.1/plugin/menu/menu.js', async: true },
+        ]
+      });
+    </script>
+  <!-- dynamically load mathjax for compatibility with self-contained -->
+  <script>
+    (function () {
+      var script = document.createElement("script");
+      script.type = "text/javascript";
+      script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+      document.getElementsByTagName("head")[0].appendChild(script);
+    })();
+  </script>
+
+<script>
+  (function() {
+    if (window.jQuery) {
+      Reveal.addEventListener( 'slidechanged', function(event) {  
+        window.jQuery(event.previousSlide).trigger('hidden');
+        window.jQuery(event.currentSlide).trigger('shown');
+      });
+    }
+  })();
+</script>
+
+
+  </body>
+</html>

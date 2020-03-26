@@ -1,0 +1,16 @@
+## The `fileInput` widget
+
+* Allows user to browse for a file
+* You can limit which file types are accepted (MIME/media types)
+* Returns `datapath`, which can be used in `read.csv`
+
+## In server: 
+
+* Replace the `switch` with `read.csv`
+* Replace references to `frame` with `file1`
+
+## Different file types
+
+* Add to `accept`
+* Add input widgets so user can choose header and delimiter type
+* Switch `read.csv` to `read.delim`
